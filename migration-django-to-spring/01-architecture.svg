@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="legacyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fafafa"/>
+      <stop offset="1" stop-color="#eeeeee"/>
+    </linearGradient>
+    <linearGradient id="authGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="legacyDbGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="authDbGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dbeafe"/>
+      <stop offset="1" stop-color="#93c5fd"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="520" fill="#ffffff"/>
+
+  <!-- Client -->
+  <g transform="translate(60,220)">
+    <circle cx="40" cy="20" r="16" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+    <path d="M10,70 Q40,40 70,70 L70,80 L10,80 Z" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+    <text x="40" y="105" text-anchor="middle" font-size="14" fill="#334155" font-weight="600">Client</text>
+  </g>
+
+  <!-- Django Service -->
+  <g filter="url(#softShadow)">
+    <rect x="220" y="80" width="240" height="120" rx="16" fill="url(#legacyGrad)" stroke="#9ca3af" stroke-width="1.5"/>
+  </g>
+  <text x="340" y="115" text-anchor="middle" font-size="15" font-weight="700" fill="#374151">legacy-backend-service</text>
+  <text x="340" y="138" text-anchor="middle" font-size="12" fill="#6b7280">Django, Legacy Monolith</text>
+  <rect x="252" y="155" width="80" height="28" rx="6" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="292" y="174" text-anchor="middle" font-size="11" fill="#4b5563">users</text>
+  <rect x="348" y="155" width="80" height="28" rx="6" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="388" y="174" text-anchor="middle" font-size="11" fill="#4b5563">other domains</text>
+
+  <!-- Auth Service -->
+  <g filter="url(#softShadow)">
+    <rect x="220" y="320" width="240" height="120" rx="16" fill="url(#authGrad)" stroke="#2563eb" stroke-width="2"/>
+  </g>
+  <text x="340" y="355" text-anchor="middle" font-size="15" font-weight="700" fill="#1e3a8a">auth-service</text>
+  <text x="340" y="378" text-anchor="middle" font-size="12" fill="#3b82f6">Spring Boot, NEW</text>
+  <rect x="252" y="395" width="176" height="28" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="340" y="414" text-anchor="middle" font-size="11" fill="#1d4ed8" font-weight="600">Member / MemberAuth / OAuth</text>
+
+  <!-- Legacy DB (cylinder) -->
+  <g filter="url(#softShadow)" transform="translate(650,80)">
+    <ellipse cx="80" cy="14" rx="60" ry="14" fill="url(#legacyDbGrad)" stroke="#ea580c" stroke-width="1.5"/>
+    <path d="M20,14 L20,106 Q20,120 80,120 Q140,120 140,106 L140,14" fill="url(#legacyDbGrad)" stroke="#ea580c" stroke-width="1.5"/>
+    <ellipse cx="80" cy="14" rx="60" ry="14" fill="none" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="80" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="#9a3412">Legacy DB</text>
+    <text x="80" y="84" text-anchor="middle" font-size="11" fill="#c2410c">PostgreSQL</text>
+  </g>
+
+  <!-- Auth DB (cylinder) -->
+  <g filter="url(#softShadow)" transform="translate(650,320)">
+    <ellipse cx="80" cy="14" rx="60" ry="14" fill="url(#authDbGrad)" stroke="#2563eb" stroke-width="2"/>
+    <path d="M20,14 L20,106 Q20,120 80,120 Q140,120 140,106 L140,14" fill="url(#authDbGrad)" stroke="#2563eb" stroke-width="2"/>
+    <ellipse cx="80" cy="14" rx="60" ry="14" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="80" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Auth DB</text>
+    <text x="80" y="84" text-anchor="middle" font-size="11" fill="#2563eb">source of truth</text>
+  </g>
+
+  <!-- Arrows: Client -> Django -->
+  <path d="M138,250 C 170,170 190,150 220,140" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrows: Client -> Auth -->
+  <path d="M138,260 C 170,340 190,360 220,380" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Django -> Legacy DB -->
+  <path d="M460,140 L650,140" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Auth -> Auth DB -->
+  <path d="M460,380 L650,380" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Auth -> Legacy DB (Outbox dashed) -->
+  <path d="M730,320 C 770,260 770,200 730,200" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arrowBlue)"/>
+
+  <!-- Outbox annotation -->
+  <rect x="755" y="240" width="120" height="40" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="815" y="258" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">Outbox</text>
+  <text x="815" y="272" text-anchor="middle" font-size="10" fill="#2563eb">one-way sync</text>
+</svg>
