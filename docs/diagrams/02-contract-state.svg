@@ -1,0 +1,23 @@
+<svg viewBox="0 0 820 170" xmlns="http://www.w3.org/2000/svg" style="background:#fafafa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <defs>
+    <marker id="arr-sm" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#444"/>
+    </marker>
+  </defs>
+  <rect x="20" y="60" width="110" height="44" rx="22" fill="#eceff1" stroke="#455a64" stroke-width="1.5"/>
+  <text x="75" y="86" text-anchor="middle" font-size="13" font-weight="600">DRAFT</text>
+  <rect x="170" y="60" width="130" height="44" rx="22" fill="#e3f2fd" stroke="#1976d2" stroke-width="1.5"/>
+  <text x="235" y="86" text-anchor="middle" font-size="13" font-weight="600" fill="#0d47a1">REVIEWING</text>
+  <rect x="340" y="60" width="110" height="44" rx="22" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="395" y="86" text-anchor="middle" font-size="13" font-weight="600" fill="#bf360c">SIGNED</text>
+  <rect x="490" y="60" width="110" height="44" rx="22" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="545" y="86" text-anchor="middle" font-size="13" font-weight="600" fill="#1b5e20">ACTIVE</text>
+  <rect x="640" y="60" width="150" height="44" rx="22" fill="#fce4ec" stroke="#ad1457" stroke-width="1.5"/>
+  <text x="715" y="86" text-anchor="middle" font-size="13" font-weight="600" fill="#880e4f">TERMINATED</text>
+  <line x1="130" y1="82" x2="166" y2="82" stroke="#444" stroke-width="1.5" marker-end="url(#arr-sm)"/>
+  <line x1="300" y1="82" x2="336" y2="82" stroke="#444" stroke-width="1.5" marker-end="url(#arr-sm)"/>
+  <line x1="450" y1="82" x2="486" y2="82" stroke="#444" stroke-width="1.5" marker-end="url(#arr-sm)"/>
+  <line x1="600" y1="82" x2="636" y2="82" stroke="#444" stroke-width="1.5" marker-end="url(#arr-sm)"/>
+  <text x="468" y="50" text-anchor="middle" font-size="11" fill="#d32f2f" font-weight="600">PaymentCompleted</text>
+  <text x="468" y="135" text-anchor="middle" font-size="11" fill="#666">이벤트 수신 시 ACTIVE 전이</text>
+</svg>

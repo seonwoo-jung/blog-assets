@@ -1,0 +1,41 @@
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" style="background:#fafafa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <defs>
+    <marker id="arr-bad" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#c62828"/>
+    </marker>
+    <marker id="arr-good" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2e7d32"/>
+    </marker>
+    <marker id="arr-bk" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#444"/>
+    </marker>
+  </defs>
+  <rect x="20" y="20" width="340" height="280" rx="12" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="190" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#b71c1c">❌ 잘못된 방식</text>
+  <rect x="40" y="90" width="120" height="44" rx="6" fill="#fff" stroke="#2e7d32"/>
+  <text x="100" y="116" text-anchor="middle" font-size="12" fill="#1b5e20">payment-svc</text>
+  <line x1="160" y1="112" x2="215" y2="112" stroke="#c62828" stroke-width="1.5" marker-end="url(#arr-bad)"/>
+  <text x="187" y="103" text-anchor="middle" font-size="10" fill="#c62828">직접 호출</text>
+  <rect x="215" y="90" width="130" height="44" rx="6" fill="#fff" stroke="#ad1457"/>
+  <text x="280" y="110" text-anchor="middle" font-size="11" fill="#880e4f">contract</text>
+  <text x="280" y="125" text-anchor="middle" font-size="11" fill="#880e4f">.activate()</text>
+  <text x="190" y="190" text-anchor="middle" font-size="12" fill="#c62828">두 도메인이 한 덩어리가 됨</text>
+  <text x="190" y="215" text-anchor="middle" font-size="11" fill="#666">→ 결제 변경 = 계약 변경</text>
+  <text x="190" y="235" text-anchor="middle" font-size="11" fill="#666">→ 장애 전파, 결합도 ↑</text>
+  <rect x="400" y="20" width="340" height="280" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="570" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#1b5e20">✅ 올바른 방식</text>
+  <rect x="420" y="90" width="120" height="44" rx="6" fill="#fff" stroke="#2e7d32"/>
+  <text x="480" y="116" text-anchor="middle" font-size="12" fill="#1b5e20">payment-svc</text>
+  <line x1="540" y1="112" x2="595" y2="112" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arr-good)"/>
+  <text x="567" y="103" text-anchor="middle" font-size="10" fill="#2e7d32">사실 발행</text>
+  <rect x="595" y="90" width="130" height="44" rx="6" fill="#fff3e0" stroke="#e65100"/>
+  <text x="660" y="110" text-anchor="middle" font-size="11" fill="#bf360c">Payment</text>
+  <text x="660" y="125" text-anchor="middle" font-size="11" fill="#bf360c">Completed</text>
+  <line x1="660" y1="134" x2="660" y2="168" stroke="#444" stroke-width="1.5" marker-end="url(#arr-bk)"/>
+  <rect x="595" y="170" width="130" height="50" rx="6" fill="#fff" stroke="#ad1457"/>
+  <text x="660" y="192" text-anchor="middle" font-size="11" fill="#880e4f">contract-svc</text>
+  <text x="660" y="208" text-anchor="middle" font-size="10" fill="#666">자기 규칙으로 전이</text>
+  <text x="570" y="252" text-anchor="middle" font-size="12" fill="#1b5e20">서로의 내부에 의존하지 않음</text>
+  <text x="570" y="272" text-anchor="middle" font-size="11" fill="#666">→ 결제는 사실만 발행</text>
+  <text x="570" y="290" text-anchor="middle" font-size="11" fill="#666">→ 계약은 듣고 자신 규칙 적용</text>
+</svg>
